@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Whitespace Pro Theme\n"
+"Project-Id-Version: Anita\n"
 "POT-Creation-Date: 2014-11-09 11:14-0500\n"
 "PO-Revision-Date: 2014-11-09 11:15-0500\n"
 "Last-Translator: \n"

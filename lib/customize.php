@@ -2,9 +2,9 @@
 /**
  * Customizer additions.
  *
- * @package Whitespace Pro
+ * @package Anita Pro
  * @author  StudioPress
- * @link    http://my.studiopress.com/themes/whitespace/
+ * @link    http://my.studiopress.com/themes/anita/
  * @license GPL2-0+
  */
  
@@ -17,7 +17,7 @@
  *
  * @return string Hex color code for accent color.
  */
-function whitespace_customizer_get_default_accent_color() {
+function anita_customizer_get_default_accent_color() {
 	return '#00a99d';
 }
 
@@ -30,11 +30,11 @@ function whitespace_customizer_get_default_accent_color() {
  *
  * @return string Hex color code for highlight color.
  */
-function whitespace_customizer_get_default_highlight_color() {
+function anita_customizer_get_default_highlight_color() {
 	return '#00baad';
 }
  
-add_action( 'customize_register', 'whitespace_customizer_register' );
+add_action( 'customize_register', 'anita_customizer_register' );
 /**
  * Register settings and controls with the Customizer.
  *
@@ -42,7 +42,7 @@ add_action( 'customize_register', 'whitespace_customizer_register' );
  * 
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
-function whitespace_customizer_register() {
+function anita_customizer_register() {
 
 	/**
 	 * Customize Background Image Control Class
@@ -51,7 +51,7 @@ function whitespace_customizer_register() {
 	 * @subpackage Customize
 	 * @since 3.4.0
 	 */
-	class Child_Whitespace_Image_Control extends WP_Customize_Image_Control {
+	class Child_Anita_Image_Control extends WP_Customize_Image_Control {
 
 		/**
 		 * Constructor.
@@ -66,15 +66,15 @@ function whitespace_customizer_register() {
 		 * @param array $args
 		 */
 		public function __construct( $manager, $id, $args ) {
-			$this->statuses = array( '' => __( 'No Image', 'whitespace' ) );
+			$this->statuses = array( '' => __( 'No Image', 'anita' ) );
 
 			parent::__construct( $manager, $id, $args );
 
-			$this->add_tab( 'upload-new', __( 'Upload New', 'whitespace' ), array( $this, 'tab_upload_new' ) );
-			$this->add_tab( 'uploaded',   __( 'Uploaded', 'whitespace' ), array( $this, 'tab_uploaded' ) );
+			$this->add_tab( 'upload-new', __( 'Upload New', 'anita' ), array( $this, 'tab_upload_new' ) );
+			$this->add_tab( 'uploaded',   __( 'Uploaded', 'anita' ), array( $this, 'tab_uploaded' ) );
 			
 			if ( $this->setting->default )
-				$this->add_tab( 'default',  __( 'Default', 'whitespace' ), array( $this, 'tab_default_background' ) );
+				$this->add_tab( 'default',  __( 'Default', 'anita' ), array( $this, 'tab_default_background' ) );
 
 			// Early priority to occur before $this->manager->prepare_controls();
 			add_action( 'customize_controls_init', array( $this, 'prepare_control' ), 5 );
@@ -92,82 +92,82 @@ function whitespace_customizer_register() {
 
 	global $wp_customize;
 
-	$wp_customize->add_section( 'whitespace-image', array(
-		'title'    => __( 'Homepage Image', 'whitespace' ),
-		'description'    => __( '<p>Use the included default image or personalize your site by uploading your own image for the homepage widget background.</p><p>The default image is <strong>1200 x 400 pixels</strong>.</p>', 'whitespace' ),
+	$wp_customize->add_section( 'anita-image', array(
+		'title'    => __( 'Homepage Image', 'anita' ),
+		'description'    => __( '<p>Use the included default image or personalize your site by uploading your own image for the homepage widget background.</p><p>The default image is <strong>1200 x 400 pixels</strong>.</p>', 'anita' ),
 		'priority' => 75,
 	) );
 
-	$wp_customize->add_setting( 'whitespace-home-image', array(
+	$wp_customize->add_setting( 'anita-home-image', array(
 		'default'  => sprintf( '%s/images/welcome.jpg', get_stylesheet_directory_uri() ),
 		'type'     => 'option',
 	) );
 	 
 	$wp_customize->add_control(
-		new Child_Whitespace_Image_Control(
+		new Child_Anita_Image_Control(
 			$wp_customize,
 			'home-background-image',
 			array(
-				'label'       => __( 'Home Image Upload', 'whitespace' ),
-				'section'     => 'whitespace-image',
-				'settings'    => 'whitespace-home-image',
+				'label'       => __( 'Home Image Upload', 'anita' ),
+				'section'     => 'anita-image',
+				'settings'    => 'anita-home-image',
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'whitespace_accent_color',
+		'anita_accent_color',
 		array(
-			'default' => whitespace_customizer_get_default_accent_color(),
+			'default' => anita_customizer_get_default_accent_color(),
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'whitespace_accent_color',
+			'anita_accent_color',
 			array(
-			    'label'    => __( 'Accent Color', 'whitespace' ),
+			    'label'    => __( 'Accent Color', 'anita' ),
 			    'section'  => 'colors',
-			    'settings' => 'whitespace_accent_color',
+			    'settings' => 'anita_accent_color',
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'whitespace_highlight_color',
+		'anita_highlight_color',
 		array(
-			'default' => whitespace_customizer_get_default_highlight_color(),
+			'default' => anita_customizer_get_default_highlight_color(),
 		)
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'whitespace_highlight_color',
+			'anita_highlight_color',
 			array(
-			    'label'    => __( 'Highlight Color', 'whitespace' ),
+			    'label'    => __( 'Highlight Color', 'anita' ),
 			    'section'  => 'colors',
-			    'settings' => 'whitespace_highlight_color',
+			    'settings' => 'anita_highlight_color',
 			)
 		)
 	);
 
 }
 
-add_action( 'wp_enqueue_scripts', 'whitespace_css' );
+add_action( 'wp_enqueue_scripts', 'anita_css' );
 /**
 * Checks the settings for the accent color, highlight color, and header
 * If any of these value are set the appropriate CSS is output
 *
 * @since 1.0.0
 */
-function whitespace_css() {
+function anita_css() {
 
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 
-	$color = get_theme_mod( 'whitespace_accent_color', whitespace_customizer_get_default_accent_color() );
-	$color_highlight = get_theme_mod( 'whitespace_highlight_color', whitespace_customizer_get_default_highlight_color() );
+	$color = get_theme_mod( 'anita_accent_color', anita_customizer_get_default_accent_color() );
+	$color_highlight = get_theme_mod( 'anita_highlight_color', anita_customizer_get_default_highlight_color() );
 	$height = get_custom_header()->height;
 
 	$css = '';
@@ -179,7 +179,7 @@ function whitespace_css() {
 		}
 		', $height ) : '';
 
-	$css .= ( whitespace_customizer_get_default_accent_color() !== $color ) ? sprintf( '
+	$css .= ( anita_customizer_get_default_accent_color() !== $color ) ? sprintf( '
 		a,
 		.entry-title a:hover,
 		.entry-header .entry-meta,
@@ -201,7 +201,7 @@ function whitespace_css() {
 		}
 		', $color ) : '';
 		
-	$css .= ( whitespace_customizer_get_default_highlight_color() !== $color_highlight ) ? sprintf( '
+	$css .= ( anita_customizer_get_default_highlight_color() !== $color_highlight ) ? sprintf( '
 		a.button:hover,
 		button:hover,
 		input:hover[type="button"],
@@ -217,13 +217,13 @@ function whitespace_css() {
 		}
 		', $color_highlight ) : '';
 		
-	if ( whitespace_customizer_get_default_accent_color() !== $color || whitespace_customizer_get_default_highlight_color() !== $color_highlight ) {
+	if ( anita_customizer_get_default_accent_color() !== $color || anita_customizer_get_default_highlight_color() !== $color_highlight ) {
 		$css .= '
 		@media only screen and (min-width: 800px) {
 		';
 	}
 		
-	$css .= ( whitespace_customizer_get_default_accent_color() !== $color ) ? sprintf( '
+	$css .= ( anita_customizer_get_default_accent_color() !== $color ) ? sprintf( '
 			.archive .content .entry:hover,
 			.genesis-nav-menu .sub-menu,
 			.genesis-nav-menu .sub-menu .sub-menu {
@@ -231,7 +231,7 @@ function whitespace_css() {
 			}
 		', $color ) : '';
 		
-	$css .= ( whitespace_customizer_get_default_highlight_color() !== $color_highlight ) ? sprintf( '
+	$css .= ( anita_customizer_get_default_highlight_color() !== $color_highlight ) ? sprintf( '
 			.genesis-nav-menu .sub-menu,
 			.genesis-nav-menu .sub-menu .sub-menu,
 			.genesis-nav-menu .sub-menu a {
@@ -239,7 +239,7 @@ function whitespace_css() {
 			}
 		', $color_highlight ) : '';
 		
-	if ( whitespace_customizer_get_default_accent_color() !== $color || whitespace_customizer_get_default_highlight_color() !== $color_highlight ) {
+	if ( anita_customizer_get_default_accent_color() !== $color || anita_customizer_get_default_highlight_color() !== $color_highlight ) {
 		$css .= '
 		}
 		';

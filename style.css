@@ -1,11 +1,11 @@
 /*
-	Theme Name: Whitespace Pro Theme
-	Theme URI: http://my.studiopress.com/themes/whitespace/
+	Theme Name: Anita
+	Theme URI: https://www.ejoweb.nl/
 	Description: Put Your Content on a Pedestal. Keep all eyes focused on your words and images when you use this spacious, elegant theme.
-	Author: StudioPress
-	Author URI: http://www.studiopress.com/
+	Author: EJOweb
+	Author URI: https://www.ejoweb.nl/
 
-	Version: 1.0.1
+	Version: 0.2
 
 	Tags: black, teal, white, one-column, responsive-layout, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, premise-landing-page
 
@@ -145,6 +145,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 textarea:focus,
+.blog .content .entry,
 .archive .content .entry,
 .button,
 .gallery img {
@@ -959,6 +960,7 @@ img.alignright,
 	border-bottom-right-radius: 0;
 }
 
+.blog .content .entry:hover .entry-content .box .count,
 .archive .content .entry:hover .entry-content .box .count,
 .content .share-filled .facebook .count,
 .content .share-filled .facebook .count:hover,
@@ -991,6 +993,7 @@ img.alignright,
 	background: #222 !important;
 }
 
+.blog .content .entry:hover .box:hover .count,
 .archive .content .entry:hover .box:hover .count,
 .content .share-filled .facebook:hover .count,
 .content .share-filled .googlePlus:hover .count,
@@ -1215,6 +1218,7 @@ img.alignright,
 	margin-bottom: 60px;
 }
 
+.blog .content .entry,
 .archive .content .entry {
 	margin-bottom: 60px;
 }
@@ -1458,7 +1462,7 @@ p.form-submit,
 		padding: 0;
 	}
 
-	.whitespace-landing .site-container {
+	.anita-landing .site-container {
 		max-width: 800px;
 	}
 
@@ -1578,7 +1582,7 @@ p.form-submit,
 	}
 
 	.breadcrumb,
-	.whitespace-landing .entry {
+	.anita-landing .entry {
 		padding-bottom: 60px;
 		padding-top: 60px;
 	}
@@ -1609,12 +1613,13 @@ p.form-submit,
 		padding: 0;
 	}
 
-	.whitespace-landing .entry-content,
-	.whitespace-landing .entry-header {
+	.anita-landing .entry-content,
+	.anita-landing .entry-header {
 		padding-left: 10%;
 		padding-right: 10%;
 	}
 		
+	.blog .content,
 	.archive .content {
 		display: -webkit-flex;
 		display: -ms-flexbox;
@@ -1625,6 +1630,7 @@ p.form-submit,
 		flex-wrap: wrap;
 	}
 
+	.blog .content .entry,
 	.archive .content .entry,
 	.archive.genesis-pro-portfolio .content .pro-portfolio {
 		border-bottom: 1px solid #eee;
@@ -1639,38 +1645,48 @@ p.form-submit,
 		word-wrap: break-word;
 	}
 	
+	.blog .content .entry:nth-of-type(-n+3),
 	.archive .content .entry:nth-of-type(-n+3){
 		border-top: 1px solid #eee;
 	}
 	
+	.blog .content .article-wrap,
 	.archive .content .article-wrap,
 	.archive.genesis-pro-portfolio .content .pro-portfolio {
 		padding-top: 60px;
 	}
 	
+	.blog .content .entry:hover,
 	.archive .content .entry:hover {
 		background-color: #00a99d;
 		color: #fff;
 	}
 
+	.blog .content .entry:hover a,
+	.blog .content .entry:hover .entry-time,
 	.archive .content .entry:hover a,
 	.archive .content .entry:hover .entry-time {
 		color: #fff;
 	}
 	
+	.blog .content .entry:hover .entry-content a,
 	.archive .content .entry:hover .entry-content a {
 		color: #e5e5e5;
 	}
 	
+	.blog .content .entry:hover .entry-content a:hover,
 	.archive .content .entry:hover .entry-content a:hover {
 		color: #fff;
 	}
 
+	.blog .content .entry:nth-of-type(3n+1),
 	.archive .content .entry:nth-of-type(3n+1) {
 		clear: left;
 	}
 
+	.blog .content .entry:nth-of-type(3n+1),
 	.archive .content .entry:nth-of-type(3n+1),
+	.blog .content .entry:nth-of-type(3n+2),
 	.archive .content .entry:nth-of-type(3n+2) {
 		border-right: 1px solid #eee;
 	}

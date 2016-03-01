@@ -1,8 +1,8 @@
 <?php
 
-//* Whitespace Theme Setting Defaults
-add_filter( 'genesis_theme_settings_defaults', 'whitespace_theme_defaults' );
-function whitespace_theme_defaults( $defaults ) {
+//* Anita Theme Setting Defaults
+add_filter( 'genesis_theme_settings_defaults', 'anita_theme_defaults' );
+function anita_theme_defaults( $defaults ) {
 
 	$defaults['blog_cat_num']              = 6;
 	$defaults['content_archive']           = 'full';
@@ -17,9 +17,9 @@ function whitespace_theme_defaults( $defaults ) {
 
 }
 
-//* Whitespace Theme Setup
-add_action( 'after_switch_theme', 'whitespace_theme_setting_defaults' );
-function whitespace_theme_setting_defaults() {
+//* Anita Theme Setup
+add_action( 'after_switch_theme', 'anita_theme_setting_defaults' );
+function anita_theme_setting_defaults() {
 
 	if( function_exists( 'genesis_update_settings' ) ) {
 
@@ -120,8 +120,8 @@ function rainmaker_responsive_slider_defaults( $defaults ) {
 }
 
 //* Simple Social Icon Defaults
-add_filter( 'simple_social_default_styles', 'whitespace_social_default_styles' );
-function whitespace_social_default_styles( $defaults ) {
+add_filter( 'simple_social_default_styles', 'anita_social_default_styles' );
+function anita_social_default_styles( $defaults ) {
 
 	$args = array(
 		'alignment'              => 'aligncenter',
