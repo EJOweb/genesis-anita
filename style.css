@@ -5,7 +5,7 @@
 	Author: EJOweb
 	Author URI: https://www.ejoweb.nl/
 
-	Version: 0.2
+	Version: 0.3
 
 	Tags: black, teal, white, one-column, responsive-layout, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, premise-landing-page
 
@@ -83,6 +83,7 @@ input[type="search"] {
 /* Float Clearing
 --------------------------------------------- */
 
+.home-featured:before,
 .after-entry:before,
 .author-box:before,
 .clearfix:before,
@@ -101,6 +102,7 @@ input[type="search"] {
 	display: table;
 }
 
+.home-featured:after,
 .after-entry:after,
 .author-box:after,
 .clearfix:after,
@@ -145,6 +147,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 textarea:focus,
+.home-featured .entry,
 .blog .content .entry,
 .archive .content .entry,
 .button,
@@ -482,6 +485,10 @@ th {
 
 .site-inner {
 	padding: 60px 10%;
+}
+
+.home-featured {
+	padding: 60px 10% 0;
 }
 
 /* Welcome
@@ -960,6 +967,7 @@ img.alignright,
 	border-bottom-right-radius: 0;
 }
 
+.home-featured .entry:hover .entry-content .box .count,
 .blog .content .entry:hover .entry-content .box .count,
 .archive .content .entry:hover .entry-content .box .count,
 .content .share-filled .facebook .count,
@@ -993,6 +1001,7 @@ img.alignright,
 	background: #222 !important;
 }
 
+.home-featured .entry:hover .box:hover .count,
 .blog .content .entry:hover .box:hover .count,
 .archive .content .entry:hover .box:hover .count,
 .content .share-filled .facebook:hover .count,
@@ -1218,6 +1227,7 @@ img.alignright,
 	margin-bottom: 60px;
 }
 
+.home-featured .entry,
 .blog .content .entry,
 .archive .content .entry {
 	margin-bottom: 60px;
@@ -1458,6 +1468,7 @@ p.form-submit,
 		max-width: 1200px;
 	}
 
+	.home-featured,
 	.site-inner {
 		padding: 0;
 	}
@@ -1619,6 +1630,7 @@ p.form-submit,
 		padding-right: 10%;
 	}
 		
+	.home-featured,
 	.blog .content,
 	.archive .content {
 		display: -webkit-flex;
@@ -1630,6 +1642,7 @@ p.form-submit,
 		flex-wrap: wrap;
 	}
 
+	.home-featured .entry,
 	.blog .content .entry,
 	.archive .content .entry,
 	.archive.genesis-pro-portfolio .content .pro-portfolio {
@@ -1645,23 +1658,28 @@ p.form-submit,
 		word-wrap: break-word;
 	}
 	
+	.home-featured .entry:nth-of-type(-n+3),
 	.blog .content .entry:nth-of-type(-n+3),
 	.archive .content .entry:nth-of-type(-n+3){
 		border-top: 1px solid #eee;
 	}
 	
+	.home-featured .article-wrap,
 	.blog .content .article-wrap,
 	.archive .content .article-wrap,
 	.archive.genesis-pro-portfolio .content .pro-portfolio {
 		padding-top: 60px;
 	}
 	
+	.home-featured .entry:hover,
 	.blog .content .entry:hover,
 	.archive .content .entry:hover {
 		background-color: #00a99d;
 		color: #fff;
 	}
 
+	.home-featured .entry:hover a,
+	.home-featured .entry:hover .entry-time,
 	.blog .content .entry:hover a,
 	.blog .content .entry:hover .entry-time,
 	.archive .content .entry:hover a,
@@ -1669,24 +1687,29 @@ p.form-submit,
 		color: #fff;
 	}
 	
+	.home-featured .entry:hover .entry-content a,
 	.blog .content .entry:hover .entry-content a,
 	.archive .content .entry:hover .entry-content a {
 		color: #e5e5e5;
 	}
 	
+	.home-featured .entry:hover .entry-content a:hover,
 	.blog .content .entry:hover .entry-content a:hover,
 	.archive .content .entry:hover .entry-content a:hover {
 		color: #fff;
 	}
 
+	.home-featured .entry:nth-of-type(3n+1),
 	.blog .content .entry:nth-of-type(3n+1),
 	.archive .content .entry:nth-of-type(3n+1) {
 		clear: left;
 	}
 
+	.home-featured .entry:nth-of-type(3n+1),
+	.home-featured .entry:nth-of-type(3n+2),
 	.blog .content .entry:nth-of-type(3n+1),
-	.archive .content .entry:nth-of-type(3n+1),
 	.blog .content .entry:nth-of-type(3n+2),
+	.archive .content .entry:nth-of-type(3n+1),
 	.archive .content .entry:nth-of-type(3n+2) {
 		border-right: 1px solid #eee;
 	}

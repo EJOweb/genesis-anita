@@ -7,15 +7,12 @@ add_action( 'genesis_meta', 'anita_front_page_genesis_meta' );
  */
 function anita_front_page_genesis_meta() {
 
-	if ( ! is_page() ) {
-	
-		//* Add faux anchors
-		add_action( 'wp_footer', 'anita_script_clickable' );
+	// //* Add faux anchors
+	add_action( 'wp_footer', 'anita_script_clickable' );
 
-		//* Add body class
-		add_filter( 'body_class', 'anita_front_page_body_class' );
+	// //* Add body class
+	// add_filter( 'body_class', 'anita_front_page_body_class' );
 
-	}
 }
 
 //* Enqueue scripts for backstretch
@@ -40,7 +37,7 @@ function anita_front_page_enqueue_scripts() {
 //* Add JS to allow elements to be faux anchors
 function anita_script_clickable() {
 
-	echo '<script type="text/javascript">jQuery(document).ready(function($){$(".content .entry").click(function(){window.location = $(this).find(".entry-title a").attr("href");});});</script>';
+	echo '<script type="text/javascript">jQuery(document).ready(function($){$(".home-featured .entry").click(function(){window.location = $(this).find(".entry-title a").attr("href");});});</script>';
 
 }
 
@@ -58,6 +55,17 @@ function anita_welcome_widget_area() {
  
 	genesis_widget_area( 'welcome', array(
 		'before' => '<div class="welcome">',
+		'after'  => '</div>',
+	) );
+ 
+}
+
+//* Hook Home Featured widget area after site header
+add_action( 'genesis_after_header', 'anita_home_featured_widget_area' );
+function anita_home_featured_widget_area() {
+ 
+	genesis_widget_area( 'home-featured', array(
+		'before' => '<div class="home-featured">',
 		'after'  => '</div>',
 	) );
  

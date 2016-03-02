@@ -212,7 +212,12 @@ genesis_register_sidebar( array(
 	'description' => __( 'This is the footer social section.', 'anita' ),
 ) );
 
-/* EJO Core */
+/** 
+ * EJOweb adjustments
+ */
+
+/* Improved Visual Editor */
+add_theme_support( 'ejo-tinymce', array() );
 
 /* Cleanup Backend */
 add_theme_support( 'ejo-cleanup-backend', array( 'widgets', 'wp-smush' ) );
@@ -220,5 +225,34 @@ add_theme_support( 'ejo-cleanup-backend', array( 'widgets', 'wp-smush' ) );
 /* Cleanup Frontend */
 add_theme_support( 'ejo-cleanup-frontend', array( 'head', 'xmlrpc', 'pingback' ) );
 
-/* Improved Visual Editor */
-add_theme_support( 'ejo-tinymce', array('button', 'intro') );
+//* Register Home Featured widget area
+genesis_register_sidebar( array(
+	'id'          => 'home-featured',
+	'name'        => __( 'Home Featured', 'anita' ),
+	'description' => __( 'This is the home featured section.', 'anita' ),
+	'before_widget' => '<article id="%1$s" class="entry %2$s"><div class="article-wrap">',
+	'after_widget'  => '</div></article>' . "\n",
+	'before_title'  => '<h2 class="entry-title">',
+	'after_title'   => "</h2>\n",
+) );
+
+/* Remove Genesis Widgets */
+add_action( 'widgets_init', 'anita_remove_genesis_widgets', 99 );
+function anita_remove_genesis_widgets()
+{
+	unregister_widget( 'Genesis_Featured_Page' );
+	unregister_widget( 'Genesis_Featured_Post' );
+	unregister_widget( 'Genesis_User_Profile_Widget' );	
+}
+
+add_action( 'widgets_init', 'anita_register_feature_page_widget' );
+
+//* Register Widget
+function anita_register_feature_page_widget() 
+{ 
+	/* Load Widget Class */
+	require_once( get_stylesheet_directory() . '/lib/widget-featured-page.php' );
+
+	/* Register Widget */
+	register_widget( 'Anita_Featured_Page_Widget' ); 
+}
