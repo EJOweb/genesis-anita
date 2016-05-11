@@ -245,9 +245,8 @@ function anita_remove_genesis_widgets()
 	unregister_widget( 'Genesis_User_Profile_Widget' );	
 }
 
-add_action( 'widgets_init', 'anita_register_feature_page_widget' );
-
 //* Register Widget
+add_action( 'widgets_init', 'anita_register_feature_page_widget' );
 function anita_register_feature_page_widget() 
 { 
 	/* Load Widget Class */

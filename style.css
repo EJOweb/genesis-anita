@@ -5,7 +5,7 @@
 	Author: EJOweb
 	Author URI: https://www.ejoweb.nl/
 
-	Version: 0.3
+	Version: 1.0
 
 	Tags: black, teal, white, one-column, responsive-layout, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, premise-landing-page
 
@@ -14,6 +14,9 @@
 
 	License: GPL-2.0+
 	License URI: http://www.opensource.org/licenses/gpl-license.php 
+
+	GitHub Theme URI:   https://github.com/EJOweb/genesis-anita
+	GitHub Branch:      master
 */
 
 /* Table of Contents
@@ -1545,7 +1548,7 @@ p.form-submit,
 		padding: 0;
 	}
 
-	.genesis-nav-menu > li:first-child a {
+	.genesis-nav-menu > li:first-child > a {
 		padding-left: 0;
 	}
 	
