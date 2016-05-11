@@ -14,7 +14,7 @@ require_once( get_stylesheet_directory() . '/lib/customize.php' );
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Anita' );
 define( 'CHILD_THEME_URL', 'https://www.ejoweb.nl/' );
-define( 'CHILD_THEME_VERSION', '0.2' );
+define( 'CHILD_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
 
 //* Enqueue scripts and styles
 add_action( 'wp_enqueue_scripts', 'anita_scripts_styles' );
